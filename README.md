@@ -19,14 +19,10 @@ This project implements a **GitOps-driven workflow** for building, training, and
 - **DevOps**: `Docker`, `Jenkins`, `Kubernetes`
 - **GitOps tools** (optional): `ArgoCD`, `Flux`
 
----
-
-## GitOps Pipeline Overview
-
-```mermaid
+--
 graph TD
-    GitHub -->|Code push| Jenkins
-    Jenkins -->|Build/Test| Docker
-    Docker -->|Push image| DockerHub
-    DockerHub -->|Trigger| Kubernetes
-    Kubernetes -->|Run| ML API Service
+  GitHub -->|Code push| Jenkins
+  Jenkins -->|Build/Test| Docker
+  Docker -->|Push image| DockerHub
+  DockerHub -->|Trigger| Kubernetes
+  Kubernetes -->|Run|[ML API Service]
